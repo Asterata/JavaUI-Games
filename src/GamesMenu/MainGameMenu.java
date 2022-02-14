@@ -12,14 +12,14 @@ import static GamesMenu.Buttons.blackjackButton;
 
 public class MainGameMenu implements ActionListener {
 
-    public static JFrame mainFrame;
-    public static JPanel mainPanel;
+    public static JFrame GM_mainFrame;
+    public static JPanel GM_mainPanel;
 
     public static void ShowGameMenu() {
-        mainPanel = new JPanel();
-        mainPanel.setLayout(null);
-        mainFrame = new JFrame("StockGame");
-        mainFrame.setSize(500, 500);
+        GM_mainPanel = new JPanel();
+        GM_mainPanel.setLayout(null);
+        GM_mainFrame = new JFrame("StockGame");
+        GM_mainFrame.setSize(500, 500);
 
         // Add Labels, Buttons, Fields
         Labels.gameMenu_AddLabels();
@@ -35,19 +35,19 @@ public class MainGameMenu implements ActionListener {
 
 
 
-        mainFrame.add(mainPanel);
+        GM_mainFrame.add(GM_mainPanel);
 
-        mainFrame.setVisible(true);
+        GM_mainFrame.setVisible(true);
 
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == stockGameButton) {
-            mainFrame.setVisible(false);
+            GM_mainFrame.setVisible(false);
             StockGame.stockGame();
         } else if (e.getSource() == blackjackButton) {
-            mainFrame.dispose();
+            GM_mainFrame.setVisible(false);
             //new HighScoresMenu();
         }
     }

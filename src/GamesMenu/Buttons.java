@@ -18,6 +18,7 @@ public class Buttons {
     public static JButton SG_PlayButton;
     public static JButton SG_SellButton;
     public static JButton SG_BuyButton;
+    public static JButton SG_PassButton;
 
     // For MainGameMenu
     public static void gameMenu_AddButtons() {
@@ -36,16 +37,17 @@ public class Buttons {
     }
 
     public static void gameMenu_AddToPanel() {
-        MainGameMenu.mainPanel.add(helpButton);
-        MainGameMenu.mainPanel.add(stockGameButton);
-        MainGameMenu.mainPanel.add(blackjackButton);
+        MainGameMenu.GM_mainPanel.add(helpButton);
+        MainGameMenu.GM_mainPanel.add(stockGameButton);
+        MainGameMenu.GM_mainPanel.add(blackjackButton);
     }
 
 
     public static void games_AddBackButton() {
         games_BackButton = new JButton("Back");
         games_BackButton.setBounds(16, 420, 80, 30);
-        StockGame.mainPanel.add(games_BackButton);
+        games_BackButton.addActionListener(new StockGame());
+        StockGame.SG_mainPanel.add(games_BackButton);
 
     }
     // For StockGame
@@ -59,13 +61,33 @@ public class Buttons {
 
             SG_HelpButton = new JButton("Need Help?");
             SG_HelpButton.setBounds(350, 420, 120, 30);
-            StockGame.mainPanel.add(SG_HelpButton);
+            SG_HelpButton.addActionListener(new StockGame());
+            StockGame.SG_mainPanel.add(SG_HelpButton);
 
             SG_PlayButton = new JButton("Play");
             SG_PlayButton.setBounds(200,420,80,30);
-            StockGame.mainPanel.add(SG_PlayButton);
+            SG_PlayButton.addActionListener(new StockGame());
+            StockGame.SG_mainPanel.add(SG_PlayButton);
+
+            SG_BuyButton = new JButton("Buy");
+            SG_BuyButton.setBounds(100,150,80,30);
+            SG_BuyButton.addActionListener(new StockGame());
+            StockGame.SG_mainPanel.add(SG_BuyButton);
+
+            SG_SellButton = new JButton("Sell");
+            SG_SellButton.setBounds(190,150,80,30);
+            SG_SellButton.addActionListener(new StockGame());
+            StockGame.SG_mainPanel.add(SG_SellButton);
+
+            SG_PassButton = new JButton("Pass");
+            SG_PassButton.setBounds(280,150,80,30);
+            SG_PassButton.addActionListener(new StockGame());
+            StockGame.SG_mainPanel.add(SG_PassButton);
+
+
 
         }
+
         // Blackjack Buttons
         else if (game == 2) {
 
