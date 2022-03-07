@@ -1,5 +1,12 @@
 # JavaUI-Games
-Using Swing to make a multi game ui
+Using Java Swing to make a multi game platform
+
+# How to play?
+Go to release tab and download the lastest release.
+Run the .jar file. 
+`java -jar UI-Games.jar`
+
+! Leave Username and Password blank, just click login to play.
 
 # WIP
  Project is not finished
