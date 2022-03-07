@@ -2,11 +2,11 @@
 Using Java Swing to make a multi game platform
 
 # How to play?
-Go to release tab and download the lastest release.
-Run the .jar file. 
+Go to release tab and download the lastest release, 
+run the .jar file. 
 `java -jar UI-Games.jar`
 
-! Leave Username and Password blank, just click login to play.
+! Leave Username and Password blank, just click login to play. !
 
 # WIP
  Project is not finished
