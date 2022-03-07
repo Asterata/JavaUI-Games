@@ -5,7 +5,7 @@ import java.awt.Desktop;
 
 public class GetHelp {
 
-    public static void getHelp(String inputURL) {
+    public GetHelp(String inputURL) {
         try {
             URI url= new URI(inputURL);
             Desktop.getDesktop()
