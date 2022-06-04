@@ -1,5 +1,6 @@
 package GamesMenu;
 
+import GamesMenu.Games.Blackjack;
 import GamesMenu.Games.StockGame;
 
 import javax.swing.*;
@@ -48,7 +49,7 @@ public class MainGameMenu implements ActionListener {
             StockGame.stockGame();
         } else if (e.getSource() == blackjackButton) {
             GM_mainFrame.setVisible(false);
-            //new HighScoresMenu();
+            Blackjack.startBlackjack();
         }
     }
 }

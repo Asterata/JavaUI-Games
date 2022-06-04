@@ -1,11 +1,10 @@
 package GamesMenu;
 
+import GamesMenu.Games.Blackjack;
 import GamesMenu.Games.StockGame;
-import LoginScreen.MainLoginScreen;
 
 import javax.swing.*;
 
-import static GamesMenu.Games.StockGame.*;
 import static GamesMenu.MainGameMenu.GM_mainPanel;
 
 public class Labels {
@@ -17,8 +16,14 @@ public class Labels {
     public static JLabel SG_StockPriceLabel;
     public static JLabel SG_StockChangeLabel;
     public static JLabel SG_OwnedStocks;
-    public static JLabel GS_StatusMSG;
-    public static JLabel  SG_OwnedStocksLabel;
+    public static JLabel SG_StatusMSG;
+    public static JLabel SG_OwnedStocksLabel;
+
+    public static JLabel  BJ_AILabel;
+    public static JLabel  BJ_PlayerLabel;
+    public static JLabel  BJ_AICardsLabel;
+    public static JLabel  BJ_PlayerCardsLabel;
+
 
     //public static JLabel
 
@@ -42,6 +47,20 @@ public class Labels {
 
 
     // For Stock Game
+    public static void blackJack_AddLabels() {
+
+        BJ_AILabel = new JLabel("Computer: ");
+        BJ_AILabel.setBounds(50, 35, 100, 50);
+        Blackjack.BJ_mainPanel.add(BJ_AILabel);
+
+        BJ_PlayerLabel = new JLabel("Player: "); // add the player name here
+        BJ_PlayerLabel.setBounds(50, 60, 180, 30);
+        Blackjack.BJ_mainPanel.add(BJ_PlayerLabel);
+
+        //MainLoginScreen.mainPanel.add(status_Label);
+
+    }
+
     public static void stockGame_AddLabels() {
 
         SG_currentDayLabel = new JLabel("Day: ");
@@ -58,6 +77,14 @@ public class Labels {
 
         //MainLoginScreen.mainPanel.add(status_Label);
 
+    }
+
+    public static void setLabel(String label, JLabel JL) {
+        JL.setText(label);
+    }
+
+    public static void getLabel(JLabel JL) {
+        JL.getText();
     }
 
 }

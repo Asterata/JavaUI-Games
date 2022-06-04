@@ -11,8 +11,6 @@ import java.util.List;
 import GamesMenu.GetHelp;
 import GamesMenu.Labels;
 import static GamesMenu.Buttons.*;
-import static GamesMenu.Labels.SG_OwnedStocksLabel;
-import static GamesMenu.Labels.stockGame_AddLabels;
 import static GamesMenu.MainGameMenu.GM_mainFrame;
 
 
@@ -29,7 +27,7 @@ public class StockGame implements ActionListener {
     public static JFrame SG_mainFrame;
     public static JPanel SG_mainPanel;
 
-    public static List<Integer> SG_boughtStocks = new ArrayList();
+    public static List<Integer> SG_boughtStocks = new ArrayList<Integer>();
 
     public static int SG_stockPrice = 0;
     public static int SG_currentDay = 1;
@@ -54,7 +52,7 @@ public class StockGame implements ActionListener {
         // adding the buttons, labels andfields
         Labels.stockGame_AddLabels();
 
-        games_AddBackButton();
+        games_AddBackButton(1);
         games_GameButtons(1);
 
         SG_mainFrame.add(SG_mainPanel);
@@ -85,12 +83,12 @@ public class StockGame implements ActionListener {
             } else {
                 playStockGame(true);
             }
-            stockGame_AddLabels();
+            Labels.stockGame_AddLabels();
             // continue here
         }
 
         // Back Button
-        if (e.getSource() == games_BackButton) {
+        else if (e.getSource() == games_BackButton) {
             System.out.println("Back Button Pressed");
 
             // Resetting the game
@@ -106,12 +104,12 @@ public class StockGame implements ActionListener {
         // ERROR:
         // class GamesMenu.GetHelp cannot be cast to class java.awt.event.ActionListener
         // (GamesMenu.GetHelp is in unnamed module of loader 'app'; java.awt.event.ActionListener is in module java.desktop of loader 'bootstrap')
-        if (e.getSource() == SG_HelpButton) {
+        else if (e.getSource() == SG_HelpButton) {
             SG_HelpButton.addActionListener((ActionListener) new GetHelp("https://github.com/Asteriva/JavaUI-Games"));
         }
 
         // Main Game Buttons
-        if (SG_canPass()) {
+        else if (SG_canPass()) {
             if (e.getSource() == SG_BuyButton) {
                 System.out.println("[INFO] You bought a stock");
                 SG_buyStock();
@@ -134,7 +132,7 @@ public class StockGame implements ActionListener {
             System.out.println("[ERROR] You can't pass the day");
         }
 
-        if (SG_currentDay == Integer.parseInt(SG_totalDays)) {
+        if (SG_currentDay > Integer.parseInt(SG_totalDays)) {
             SG_gameEnded();
         }
 
@@ -197,7 +195,7 @@ public class StockGame implements ActionListener {
     private static void SG_buyStock() {
         if (canPlay) {
             SG_boughtStocks.add(SG_stockPrice);
-            SG_OwnedStocksLabel.setText("Owned Stocks: " + SG_boughtStocks);
+            Labels.SG_OwnedStocksLabel.setText("Owned Stocks: " + SG_boughtStocks);
             SG_passDay();
         }
     }
@@ -216,7 +214,7 @@ public class StockGame implements ActionListener {
                 }
                 SG_boughtStocks.clear();
             }
-            SG_OwnedStocksLabel.setText("Owned Stocks: " + SG_boughtStocks);
+            Labels.SG_OwnedStocksLabel.setText("Owned Stocks: " + SG_boughtStocks);
             SG_passDay();
         }
     }
