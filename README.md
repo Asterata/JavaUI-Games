@@ -12,6 +12,3 @@ run the .jar file.
 
 # WIP
  Project is not finished
-
-
-i just realized i wrote "Leaning" instead of "Learning" LOLLL 💀
